@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4DIAMONDS | Premium Web & Graphics Hub</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Montserrat:wght@800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --amazon-blue: #131921;
+            --amazon-light-blue: #232f3e;
+            --amazon-orange: #febd69;
+            --amazon-orange-hover: #f3a847;
+            --white: #ffffff;
+            --bg-light: #eaeded;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
+        body { background-color: var(--bg-light); scroll-behavior: smooth; color: #333; }
+
+        /* --- PROFESSIONAL NAVIGATION BAR --- */
+        header {
+            background-color: var(--amazon-blue);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-top {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px 4%;
+            max-width: 1500px;
+            margin: auto;
+        }
+
+        .logo {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 26px;
+            color: var(--amazon-orange);
+            text-decoration: none;
+            font-weight: 800;
+        }
+
+        /* Search Bar Style */
+        .search-container {
+            flex: 1;
+            display: flex;
+            max-width: 600px;
+            margin: 0 30px;
+        }
+
+        .search-container input {
+            width: 100%;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px 0 0 4px;
+            outline: none;
+            font-size: 14px;
+        }
+
+        .search-container button {
+            background-color: var(--amazon-orange);
+            border: none;
+            padding: 10px 20px;
+            border-radius: 0 4px 4px 0;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .search-container button:hover { background-color: var(--amazon-orange-hover); }
+
+        /* Nav Links */
+        .nav-links {
+            display: flex;
+            list-style: none;
+            align-items: center;
+        }
+
+        .nav-links li { margin: 0 12px; }
+
+        .nav-links a {
+            color: var(--white);
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover { color: var(--amazon-orange); }
+
+        /* Connect Button */
+        .btn-connect {
+            background-color: var(--amazon-orange);
+            color: #000 !important;
+            padding: 8px 18px;
+            border-radius: 20px;
+            font-weight: 700 !important;
+            transition: 0.3s;
+        }
+        .btn-connect:hover { transform: scale(1.05); }
+
+        /* --- HERO SECTION --- */
+        .hero {
+            height: 70vh;
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1497215728101-856f4ea42174?auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-align: center;
+            margin-top: 60px;
+        }
+
+        .hero h1 { font-size: 50px; margin-bottom: 10px; font-family: 'Montserrat'; }
+        .hero p { font-size: 22px; color: var(--amazon-orange); margin-bottom: 20px; }
+
+        /* --- SECTIONS --- */
+        .section { padding: 80px 8%; max-width: 1400px; margin: auto; }
+        .section-title { font-size: 32px; border-left: 6px solid var(--amazon-orange); padding-left: 20px; margin-bottom: 40px; text-transform: uppercase; letter-spacing: 1px; }
+
+        /* Gallery Grid */
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; }
+        .card { background: white; border-radius: 10px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.1); transition: 0.3s; }
+        .card:hover { transform: translateY(-10px); }
+        .card img { width: 100%; height: 220px; object-fit: cover; }
+        .card-body { padding: 20px; }
+        .card-body h3 { margin-bottom: 10px; font-size: 20px; color: var(--amazon-blue); }
+
+        /* --- ORDER FORM --- */
+        .order-box { background: white; padding: 40px; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); max-width: 700px; margin: auto; }
+        input, select, textarea { width: 100%; padding: 12px; margin-bottom: 20px; border: 1px solid #ddd; border-radius: 6px; outline: none; }
+        input:focus { border-color: var(--amazon-orange); }
+        .submit-btn { width: 100%; padding: 15px; background: var(--amazon-blue); color: white; border: none; border-radius: 6px; font-weight: bold; cursor: pointer; font-size: 18px; transition: 0.3s; }
+        .submit-btn:hover { background: #1a222d; }
+
+        /* --- FOOTER --- */
+        footer { background: var(--amazon-blue); color: white; padding: 60px 8% 20px; margin-top: 50px; }
+        .footer-content { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 40px; }
+        .footer-box h4 { color: var(--amazon-orange); margin-bottom: 20px; font-size: 20px; }
+        .social-icons { display: flex; gap: 15px; margin-top: 15px; }
+        .social-icons a { width: 40px; height: 40px; background: #232f3e; color: white; display: flex; align-items: center; justify-content: center; border-radius: 50%; text-decoration: none; transition: 0.3s; }
+        .social-icons a:hover { background: var(--amazon-orange); color: #000; }
+        .wa-link { color: #25d366; text-decoration: none; font-weight: bold; display: block; margin-top: 10px; }
+
+        @media (max-width: 992px) {
+            .search-container { display: none; }
+            .nav-links { display: none; }
+            .hero h1 { font-size: 35px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="nav-top">
+            <a href="#" class="logo">4DIAMONDS</a>
+            
+            <div class="search-container">
+                <input type="text" placeholder="Search services (e.g. Logo, Website)...">
+                <button><i class="fas fa-search"></i></button>
+            </div>
+
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#order">Order</a></li>
+                <li><a href="https://wa.me/923464563020" class="btn-connect">Connect Us</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <section class="hero" id="home">
+        <h1>PREMIUM DIGITAL SOLUTIONS</h1>
+        <p>Expert Web Development & Elite Graphic Design</p>
+    </section>
+
+    <section class="section" id="about">
+        <h2 class="section-title">Who We Are</h2>
+        <div style="background: white; padding: 40px; border-radius: 12px; border-left: 5px solid var(--amazon-orange);">
+            <p style="font-size: 18px; line-height: 1.8;">
+                <strong>4DIAMONDS</strong> is a high-end agency specializing in modern digital services. 
+                Our team consists of industry experts dedicated to transforming your business ideas into reality with 
+                clean code and stunning visuals.
+            </p>
+        </div>
+    </section>
+
+    <section class="section" id="gallery">
+        <h2 class="section-title">Our Work Gallery</h2>
+        <div class="grid">
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1547658719-da2b51169166?auto=format&fit=crop&w=500&q=80" alt="Web">
+                <div class="card-body">
+                    <h3>Web Development</h3>
+                    <p>High-performance, secure, and responsive websites.</p>
+                </div>
+            </div>
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1626785774573-4b799315345d?auto=format&fit=crop&w=500&q=80" alt="Graphics">
+                <div class="card-body">
+                    <h3>Graphic Branding</h3>
+                    <p>Professional logos and brand identity packages.</p>
+                </div>
+            </div>
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1551288049-bbbda5366392?auto=format&fit=crop&w=500&q=80" alt="SEO">
+                <div class="card-body">
+                    <h3>Digital Marketing</h3>
+                    <p>SEO and growth strategies for global reach.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="order">
+        <h2 class="section-title">Direct Order Form</h2>
+        <div class="order-box">
+            <form id="orderRequestForm">
+                <input type="text" placeholder="Your Full Name" required>
+                <input type="email" placeholder="Email Address" required>
+                <select required>
+                    <option value="">Select Category</option>
+                    <option>Web Development (Mahad Irfan)</option>
+                    <option>Graphic Design (Fahad Irfan)</option>
+                    <option>E-commerce Solution</option>
+                </select>
+                <textarea rows="5" placeholder="Please describe your project details..."></textarea>
+                <button type="submit" class="submit-btn">Send Order Request</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-box">
+                <h4>4DIAMONDS Studio</h4>
+                <p>Delivering excellence in every pixel and every line of code.</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://wa.me/923464563020"><i class="fab fa-whatsapp"></i></a>
+                </div>
+            </div>
+            <div class="footer-box">
+                <h4>Web Developer</h4>
+                <p><strong>Mahad Irfan</strong></p>
+                <a href="https://wa.me/923464563020" class="wa-link"><i class="fab fa-whatsapp"></i> +92 346 4563020</a>
+            </div>
+            <div class="footer-box">
+                <h4>Graphic Designer</h4>
+                <p><strong>Fahad Irfan</strong></p>
+                <a href="https://wa.me/923144351432" class="wa-link"><i class="fab fa-whatsapp"></i> +92 314 4351432</a>
+            </div>
+        </div>
+        <div style="text-align: center; margin-top: 50px; padding-top: 20px; border-top: 1px solid #3a4553; font-size: 13px; color: #888;">
+            &copy; 2026 4DIAMONDS | All Rights Reserved. Created by Mahad Irfan.
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scroll for nav links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                if(this.getAttribute('href').startsWith('#')) {
+                    e.preventDefault();
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Form Submission
+        document.getElementById('orderRequestForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you! Your request has been sent to 4DIAMONDS team. We will contact you soon on WhatsApp.');
+        });
+    </script>
+</body>
+</html>
